@@ -6,11 +6,12 @@ public class SwitchExperssions {
         MAMAL,
         FISH,
         REPTILE,
-        AVIAN;
+        AVIAN,
+        AMPHIBIAN;
 
 
         public static void main(String[] args) {
-            var animal = FISH;
+            var animal = AVIAN;
             System.out.printf("I feel %s when I encounter a %s\n", oldWay(animal), animal.name().toLowerCase());
             System.out.printf("I feel %s when I encounter a %s\n", java14Way(animal), animal.name().toLowerCase());
         }
@@ -18,10 +19,12 @@ public class SwitchExperssions {
         public static String oldWay(Vertebrates type) {
             var emotion = "indifferent";
             switch (type) {
+                case FISH:
                 case AVIAN: emotion = "jealous"; // I wish I could fly or swim better
                     break;
                 case REPTILE: emotion = "scared"; // I am scared of snakes
                     break;
+                case AMPHIBIAN:
                 case MAMAL: emotion = "hungry"; // I like a good steak, but hope it's not cat or dog
                     break;
 // explain the risks:
@@ -36,10 +39,17 @@ public class SwitchExperssions {
         return switch (type) {
             case FISH, AVIAN ->  "jealous"; // I wish I could fly or swim better
             case REPTILE ->  "scared"; // I am scared of snakes
-            case MAMAL -> "hungry"; // I like a good steak, but hope it's not cat or dog
+            case MAMAL, AMPHIBIAN -> "hungry"; // I like a good steak, but hope it's not cat or dog
         };
         // explain safety from exhaustiveness
         // show example of adding Amphibia to vertebrates
+    }
+
+    public static String otherExample(String type) {
+        return switch (type) {
+            case  "FISH" -> "jealous";
+            default ->  "kinda fine";
+        };
     }
 
 }
