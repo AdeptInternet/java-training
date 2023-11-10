@@ -6,7 +6,7 @@ public class PrivateMethodsInInterfaces {
     interface OldWay1 {
 
 
-        default String actLikeATeenAger(String text) {
+          default String actLikeATeenAger(String text) {
             return addEmojis(shout(text));
         }
 

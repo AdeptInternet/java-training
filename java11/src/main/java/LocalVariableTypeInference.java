@@ -22,7 +22,7 @@ public class LocalVariableTypeInference {
         if (cal.get(Calendar.HOUR_OF_DAY) < 12) {
             timeOfDay = "morning";
         } else if (cal.get(Calendar.HOUR_OF_DAY) < 18) {
-            timeOfDay = "evening";
+            timeOfDay = "afternoon";
         }
         List<String> greets = new ArrayList<>();
         for (String name : names) {
@@ -37,7 +37,7 @@ public class LocalVariableTypeInference {
         if (cal.get(Calendar.HOUR_OF_DAY) < 12) {
             timeOfDay = "morning";
         } else if (cal.get(Calendar.HOUR_OF_DAY) < 18) {
-            timeOfDay = "evening";
+            timeOfDay = "afternoon";
         }
         var greets = new ArrayList<String>(); // point out that we need to put the type *somewhere*
         for (var name : names) {

@@ -65,8 +65,7 @@ public class TryWithResources {
      * Good: Terse, we only have code for what we do
      */
     public List<String> java9Way() throws SQLException {
-        try (
-                Connection con = DriverManager.getConnection(SQL_URL, SQL_USER, SQL_PASSWORD);
+        try (Connection con = DriverManager.getConnection(SQL_URL, SQL_USER, SQL_PASSWORD);
                 Statement stmt = con.createStatement();
                 ResultSet rs = stmt.executeQuery("SELECT email FROM CLIENT WHERE name='Bob")) {
             List<String> emails = new ArrayList<>();
